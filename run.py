@@ -8,7 +8,7 @@ if __name__ = "__main__":
             break
         try:
             if command.upper() == "TRAIN":
-            	print("training not yet implemented")
+            	Model = TrainModel(input("Enter some random numbers (at least 100)."))
             if command.upper() == "PLAY":
             	print("Play not yet implemented")
             if command.upper() == "CHECK_IF_TRAINED":

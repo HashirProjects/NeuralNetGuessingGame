@@ -19,10 +19,8 @@ class TrainModel():
         model = keras.Sequential()
         
         model.add(keras.layers.Input(shape=(10,)))
-        model.add(keras.layers.Dense(units=100, activation='relu' ))
-        model.add(keras.layers.Dropout(0.2))
-        model.add(keras.layers.Dense(units=50, activation='relu' ))
-        model.add(keras.layers.Dropout(0.2))
+        model.add(keras.layers.Dense(units=10000, activation='relu' ))
+        model.add(keras.layers.Dropout(0.5))
         model.add(keras.layers.Dense(units=10, activation='softmax')) # 10 nodes for the ten different digits possible
 
     
@@ -35,5 +33,5 @@ class TrainModel():
         
         model.compile(optimizer=keras.optimizers.SGD(learning_rate=lr_schedule), loss='categorical_crossentropy', metrics=[keras.metrics.CategoricalAccuracy()])#i wrote a pretty large model  since the task is relatively complex
 
-        history = model.fit(self.x, self.y, epochs=20)# you have to experiement and see if more epochs are reducing the loss more
+        history = model.fit(self.x, self.y, epochs=120)# you have to experiement and see if more epochs are reducing the loss more
         model.save('C:/Users/hashi/OneDrive/Desktop/Programming/NN_GuessingGame/src/UserModel')
